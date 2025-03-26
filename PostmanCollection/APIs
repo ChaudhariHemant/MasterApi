@@ -1,0 +1,161 @@
+post - http://localhost:8080/v2/master_list
+
+
+1) {
+  "category": "Debt",
+  "parentCode": "B-DEBT-REG",
+  "parentName": "Debt Regular",
+  "name": "Debt Scheme",
+  "plan": "Regular",
+  "option": "Payout",
+  "optionFrequency": "QUARTERLY",
+  "faceValue": 50,
+  "subCategory": "Short Term",
+  "transactionModeAllowed": "Offline",
+  "sector": "Finance",
+  "benchmark": "50"
+}
+
+
+2){
+  "category": "Equity",
+  "parentCode": "B-EQT-LARGE",
+  "parentName": "Equity Large Cap",
+  "name": "Equity Growth Fund",
+  "plan": "Direct",
+  "option": "Reinvestment",
+  "optionFrequency": "MONTHLY",
+  "faceValue": 100,
+  "subCategory": "Large Cap",
+  "transactionModeAllowed": "Online",
+  "sector": "Technology",
+  "benchmark": "100"
+}
+
+
+3){
+  "category": "Balanced",
+  "parentCode": "B-BAL-HYBRID",
+  "parentName": "Balanced Hybrid Fund",
+  "name": "Hybrid Growth Fund",
+  "plan": "Regular",
+  "option": "Growth",
+  "optionFrequency": "QUARTERLY",
+  "faceValue": 75,
+  "subCategory": "Hybrid",
+  "transactionModeAllowed": "Online",
+  "sector": "Banking",
+  "benchmark": "75"
+}
+
+ //================================================
+
+Get =http://localhost:8080/v2/master_list?page=1&size=2
+
+
+response = {
+    "content": [
+        {
+            "id": 3,
+            "category": "Balanced",
+            "parentCode": "B-BAL-HYBRID",
+            "parentName": "Balanced Hybrid Fund",
+            "name": "Hybrid Growth Fund",
+            "plan": "Regular",
+            "option": "Growth",
+            "optionFrequency": "QUARTERLY",
+            "faceValue": 75,
+            "subCategory": "Hybrid",
+            "transactionModeAllowed": "Online",
+            "sector": "Banking",
+            "benchmark": "75"
+        }
+    ],
+    "pageable": {
+        "pageNumber": 1,
+        "pageSize": 2,
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "offset": 2,
+        "paged": true,
+        "unpaged": false
+    },
+    "last": true,
+    "totalElements": 3,
+    "totalPages": 2,
+    "size": 2,
+    "number": 1,
+    "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+    },
+    "numberOfElements": 1,
+    "first": false,
+    "empty": false
+}
+
+//==========================================================
+get = >http://localhost:8080/v2/master_list?page=0&size=2
+{
+    "content": [
+        {
+            "id": 1,
+            "category": "Debt",
+            "parentCode": "B-DEBT-REG",
+            "parentName": "Debt Regular",
+            "name": "Debt Scheme",
+            "plan": "Regular",
+            "option": "Payout",
+            "optionFrequency": "QUARTERLY",
+            "faceValue": 50,
+            "subCategory": "Short Term",
+            "transactionModeAllowed": "Offline",
+            "sector": "Finance",
+            "benchmark": "50"
+        },
+        {
+            "id": 2,
+            "category": "Equity",
+            "parentCode": "B-EQT-LARGE",
+            "parentName": "Equity Large Cap",
+            "name": "Equity Growth Fund",
+            "plan": "Direct",
+            "option": "Reinvestment",
+            "optionFrequency": "MONTHLY",
+            "faceValue": 100,
+            "subCategory": "Large Cap",
+            "transactionModeAllowed": "Online",
+            "sector": "Technology",
+            "benchmark": "100"
+        }
+    ],
+    "pageable": {
+        "pageNumber": 0,
+        "pageSize": 2,
+        "sort": {
+            "empty": true,
+            "unsorted": true,
+            "sorted": false
+        },
+        "offset": 0,
+        "unpaged": false,
+        "paged": true
+    },
+    "last": false,
+    "totalPages": 2,
+    "totalElements": 3,
+    "size": 2,
+    "number": 0,
+    "sort": {
+        "empty": true,
+        "unsorted": true,
+        "sorted": false
+    },
+    "numberOfElements": 2,
+    "first": true,
+    "empty": false
+}
